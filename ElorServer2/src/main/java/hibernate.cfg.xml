@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">Elorrieta00</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/elorbase?useSSL=false</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">none</property>
+        <property name="hibernate.search.autoregister_listeners">true</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <mapping resource="objetos/Alumno.hbm.xml"/>
+        <mapping resource="objetos/Asignatura.hbm.xml"/>
+        <mapping resource="objetos/RolUsuario.hbm.xml"/>
+        <mapping resource="objetos/Usuario.hbm.xml"/>
+        <mapping resource="objetos/Ciclo.hbm.xml"/>
+        <mapping resource="objetos/Reunion.hbm.xml"/>
+        <mapping resource="objetos/Horario.hbm.xml"/>
+        <mapping resource="objetos/AsignaturaCiclo.hbm.xml"/>
+        <mapping resource="objetos/Estado.hbm.xml"/>
+        <mapping resource="objetos/ReunionInvitados.hbm.xml"/>
+        <mapping resource="objetos/Profesor.hbm.xml"/>
+        <mapping resource="objetos/Roles.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 22 feb 2025, 16:06:36 by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="elorbase" name="objetos.Roles" optimistic-lock="none" table="roles">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="nombre" type="string">
+            <column length="20" name="nombre" not-null="true"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="rolUsuarios" table="rol_usuario">
+            <key>
+                <column name="rol_id" not-null="true"/>
+            </key>
+            <one-to-many class="objetos.RolUsuario"/>
+        </set>
+    </class>
+</hibernate-mapping>

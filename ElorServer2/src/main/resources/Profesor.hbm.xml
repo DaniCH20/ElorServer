@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 22 feb 2025, 16:06:36 by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="elorbase" name="objetos.Profesor" optimistic-lock="none" table="profesor">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="foreign"/>
+        </id>
+        <one-to-one class="objetos.Usuario" constrained="true" name="usuario"/>
+        <property name="tipo" type="string">
+            <column length="10" name="tipo" not-null="true"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="reunionInvitadoses" table="reunion_invitados">
+            <key>
+                <column name="invitado_id" not-null="true"/>
+            </key>
+            <one-to-many class="objetos.ReunionInvitados"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="reunions" table="reunion">
+            <key>
+                <column name="organizador_id" not-null="true"/>
+            </key>
+            <one-to-many class="objetos.Reunion"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<type-mapping>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	</type-mapping>
+	<table-filter match-schema="elorbase" match-name=".*" />
+	<table-filter match-name="alumno" match-catalog="elorbase"></table-filter>
+	<table-filter match-name="asignatura" match-catalog="elorbase"></table-filter>
+	<table-filter match-name="asignatura_ciclo"
+		match-catalog="elorbase">
+	</table-filter>
+	<table-filter match-name="ciclo" match-catalog="elorbase"></table-filter>
+	<table-filter match-name="estado" match-catalog="elorbase"></table-filter>
+	<table-filter match-name="horario" match-catalog="elorbase"></table-filter>
+	<table-filter match-name="profesor" match-catalog="elorbase"></table-filter>
+	<table-filter match-name="reunion" match-catalog="elorbase"></table-filter>
+	<table-filter match-name="reunion_invitados"
+		match-catalog="elorbase">
+	</table-filter>
+	<table-filter match-name="rol_usuario" match-catalog="elorbase"></table-filter>
+	<table-filter match-name="roles" match-catalog="elorbase"></table-filter>
+	<table-filter match-name="usuario" match-catalog="elorbase"></table-filter>
+	<table catalog="elorbase" name="alumno">
+		<column name="id"></column>
+		<column name="ciclo_id"></column>
+		<column name="curso"></column>
+		<column name="dual_intensiva"></column>
+	</table>
+	<table catalog="elorbase" name="asignatura">
+		<column name="id"></column>
+		<column name="nombre"></column>
+		<column name="horas_totales"></column>
+		<column name="curso"></column>
+		<column name="codigo"></column>
+	</table>
+	<table catalog="elorbase" name="asignatura_ciclo">
+		<column name="id"></column>
+		<column name="asignatura_id"></column>
+		<column name="ciclo_id"></column>
+	</table>
+	<table catalog="elorbase" name="ciclo">
+		<column name="id"></column>
+		<column name="nombre"></column>
+		<column name="periodo"></column>
+	</table>
+	<table catalog="elorbase" name="estado">
+		<column name="id"></column>
+		<column name="nombre"></column>
+	</table>
+	<table catalog="elorbase" name="horario">
+		<column name="id"></column>
+		<column name="dia"></column>
+		<column name="hora_inicio"></column>
+		<column name="hora_fin"></column>
+		<column name="usuario_id"></column>
+		<column name="asignatura_id"></column>
+	</table>
+	<table catalog="elorbase" name="profesor">
+		<column name="id"></column>
+		<column name="tipo"></column>
+	</table>
+	<table catalog="elorbase" name="reunion">
+		<column name="id"></column>
+		<column name="titulo"></column>
+		<column name="asunto"></column>
+		<column name="dia"></column>
+		<column name="hora"></column>
+		<column name="aula"></column>
+		<column name="estado_id"></column>
+		<column name="organizador_id"></column>
+	</table>
+	<table catalog="elorbase" name="reunion_invitados">
+		<column name="id"></column>
+		<column name="reunion_id"></column>
+		<column name="invitado_id"></column>
+		<column name="estado_invitacion"></column>
+	</table>
+	<table catalog="elorbase" name="rol_usuario">
+		<column name="id"></column>
+		<column name="usuario_id"></column>
+		<column name="rol_id"></column>
+	</table>
+
+	<table catalog="elorbase" name="roles">
+		<column name="id"></column>
+		<column name="nombre"></column>
+	</table>
+	<table catalog="elorbase" name="usuario">
+		<column name="id"></column>
+		<column name="login"></column>
+		<column name="dni"></column>
+		<column name="clave"></column>
+		<column name="nombre"></column>
+		<column name="apellido"></column>
+		<column name="telefono1"></column>
+		<column name="telefono2"></column>
+		<column name="foto"></column>
+		<column name="direccion"></column>
+		<column name="existe"></column>
+		<column name="tipo_usuario"></column>
+	</table>
+</hibernate-reverse-engineering>

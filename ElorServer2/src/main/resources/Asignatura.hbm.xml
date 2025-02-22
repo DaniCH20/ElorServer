@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 22 feb 2025, 16:06:36 by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="elorbase" name="objetos.Asignatura" optimistic-lock="none" table="asignatura">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="nombre" type="string">
+            <column length="100" name="nombre" not-null="true"/>
+        </property>
+        <property name="horasTotales" type="int">
+            <column name="horas_totales" not-null="true"/>
+        </property>
+        <property name="curso" type="int">
+            <column name="curso" not-null="true"/>
+        </property>
+        <property name="codigo" type="int">
+            <column name="codigo" not-null="true"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="asignaturaCiclos" table="asignatura_ciclo">
+            <key>
+                <column name="asignatura_id" not-null="true"/>
+            </key>
+            <one-to-many class="objetos.AsignaturaCiclo"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="horarios" table="horario">
+            <key>
+                <column name="asignatura_id" not-null="true"/>
+            </key>
+            <one-to-many class="objetos.Horario"/>
+        </set>
+    </class>
+</hibernate-mapping>

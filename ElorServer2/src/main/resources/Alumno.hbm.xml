@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 22 feb 2025, 16:06:36 by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="elorbase" name="objetos.Alumno" optimistic-lock="none" table="alumno">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="foreign"/>
+        </id>
+        <many-to-one class="objetos.Ciclo" fetch="select" name="ciclo">
+            <column name="ciclo_id" not-null="true"/>
+        </many-to-one>
+        <one-to-one class="objetos.Usuario" constrained="true" name="usuario"/>
+        <property name="curso" type="int">
+            <column name="curso" not-null="true"/>
+        </property>
+        <property name="dualIntensiva" type="java.lang.Boolean">
+            <column name="dual_intensiva"/>
+        </property>
+    </class>
+</hibernate-mapping>

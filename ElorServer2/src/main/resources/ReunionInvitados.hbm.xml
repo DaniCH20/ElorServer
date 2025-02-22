@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 22 feb 2025, 16:06:36 by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="elorbase" name="objetos.ReunionInvitados" optimistic-lock="none" table="reunion_invitados">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="objetos.Reunion" fetch="select" name="reunion">
+            <column name="reunion_id" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="objetos.Profesor" fetch="select" name="profesor">
+            <column name="invitado_id" not-null="true"/>
+        </many-to-one>
+        <property name="estadoInvitacion" type="string">
+            <column length="9" name="estado_invitacion"/>
+        </property>
+    </class>
+</hibernate-mapping>

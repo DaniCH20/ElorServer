@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 22 feb 2025, 16:06:36 by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="elorbase" name="objetos.Ciclo" optimistic-lock="none" table="ciclo">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="nombre" type="string">
+            <column length="60" name="nombre" not-null="true"/>
+        </property>
+        <property name="periodo" type="string">
+            <column length="20" name="periodo" not-null="true"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="alumnos" table="alumno">
+            <key>
+                <column name="ciclo_id" not-null="true"/>
+            </key>
+            <one-to-many class="objetos.Alumno"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="asignaturaCiclos" table="asignatura_ciclo">
+            <key>
+                <column name="ciclo_id" not-null="true"/>
+            </key>
+            <one-to-many class="objetos.AsignaturaCiclo"/>
+        </set>
+    </class>
+</hibernate-mapping>
