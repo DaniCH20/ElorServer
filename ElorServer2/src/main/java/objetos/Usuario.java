@@ -15,8 +15,8 @@ public class Usuario implements java.io.Serializable {
 	private String clave;
 	private String nombre;
 	private String apellido;
-	private String telefono1;
-	private String telefono2;
+	private int telefono1;
+	private int telefono2;
 	private byte[] foto;
 	private String direccion;
 	private Boolean existe;
@@ -38,8 +38,8 @@ public class Usuario implements java.io.Serializable {
 		this.tipoUsuario = tipoUsuario;
 	}
 
-	public Usuario(String login, String dni, String clave, String nombre, String apellido, String telefono1,
-			String telefono2, byte[] foto, String direccion, Boolean existe, String tipoUsuario, Profesor profesor,
+	public Usuario(String login, String dni, String clave, String nombre, String apellido, int telefono1,
+			int telefono2, byte[] foto, String direccion, Boolean existe, String tipoUsuario, Profesor profesor,
 			Alumno alumno, Set horarios, Set rolUsuarios) {
 		this.login = login;
 		this.dni = dni;
@@ -106,20 +106,20 @@ public class Usuario implements java.io.Serializable {
 		this.apellido = apellido;
 	}
 
-	public String getTelefono1() {
+	public int getTelefono1() {
 		return this.telefono1;
 	}
 
-	public void setTelefono1(String telefono1) {
-		this.telefono1 = telefono1;
+	public void setTelefono1(int telefono) {
+		this.telefono1 = telefono;
 	}
 
-	public String getTelefono2() {
+	public int getTelefono2() {
 		return this.telefono2;
 	}
 
-	public void setTelefono2(String telefono2) {
-		this.telefono2 = telefono2;
+	public void setTelefono2(int telefono22) {
+		this.telefono2 = telefono22;
 	}
 
 	public byte[] getFoto() {
